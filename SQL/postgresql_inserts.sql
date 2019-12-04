@@ -56,6 +56,50 @@ INSERT INTO esope.professionals_to_children(id_user_child,id_user_prof, start_ca
 INSERT INTO esope.professionals_to_children(id_user_child,id_user_prof, start_care_date) VALUES (8,11, TO_TIMESTAMP('2005-03-05 01:01:01','YYYY-MM-DD HH24:MI:SS'));
 INSERT INTO esope.professionals_to_children(id_user_child,id_user_prof, start_care_date) VALUES (9,13, TO_TIMESTAMP('2005-07-07 01:01:01','YYYY-MM-DD HH24:MI:SS'));
 -- TODO Pictures
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relative aux habitudes de déplacement',5,'/bus.jpg');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relative aux habitudes de déplacement',5,'/marcher.jpg');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relative aux habitudes de déplacement',5,'/traverser.jpg  ');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relative aux habitudes de déplacement',5,'/velo.jpg');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relative aux habitudes de déplacement',5,'/voiture.jpg');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relative aux habitudes de loisirs',7,'/casque et ordi.jpg'); 
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relative aux habitudes de loisirs',7,'/écrire.jpg');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relative aux habitudes de loisirs',7,'/Lire.jpg');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relative aux habitudes de loisirs',7,'/television.jpg');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relative aux habitures de vie au logis', 4, '/allumer lumiere.jpg'); 
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relative aux habitures de vie au logis', 4, '/balayer.jpg');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relative aux habitures de vie au logis', 4, '/machine à laver.jpg');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relative aux habitures de vie au logis', 4, '/passer d une pièce à l autre.jpg');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relative aux habitures de vie au logis', 4, '/prothèse.jpg'); 
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relative aux habitures de vie au logis', 4, '/ranger son espace.jpg');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relative aux habitures de vie au logis', 4, '/vaisselle def.jpg');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relatives à la nutrition', 1,'/boire tasse.jpg');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relatives à la nutrition', 1,'/dresserlatable.jpg');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relatives à la nutrition', 1,'/manger au restaurant.jpg');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relatives à la nutrition', 1,'/manger avec les mains.jpg');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relatives à la nutrition', 1,'/preěparer a manger.jpg');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relatives à la nutrition', 1,'/sandwich def.jpg');
+INSERT INTO esope.pictures(description,id_category,path) VALUES ('Image relatives à la nutrition', 1,'/serviraliments.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',3,'parler à des adultes.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',3,'parler en communauté.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',3,'téléphone.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',6,'acheter .jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',2,'laver les mains.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',2,'urgence.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',2,'brosser cheveux.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',2,'chaussures.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',2,'dormir.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',2,'douche.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',2,'habits sales.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',2,'laver cheveux.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',2,'prendre vetement garde robe.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',2,'se brosser les dents.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',2,'se lever.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',2,'se moucher.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',2,'sécher les cheveux.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',2,'s essuyer.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',2,'s habiller.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',2,'s habiller-tirette.jpg');
+INSERT INTO esope.pictures(description,id_category,path ) VALUES ('Image relative à un truc',2,'toilettes.jpg');
 
 -- TODO Game sessions
 -- TODO selected categories
