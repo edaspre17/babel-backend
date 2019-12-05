@@ -1,0 +1,1 @@
+class Handicap < ActiveRecodr::Base
