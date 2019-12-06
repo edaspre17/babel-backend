@@ -1,4 +1,4 @@
-class GameSessionsController < ApplicationController
+class Api::V1::GameSessionsController < ApplicationController
   before_action :set_game_session, only: [:show, :update, :destroy]
 
   # GET /game_sessions

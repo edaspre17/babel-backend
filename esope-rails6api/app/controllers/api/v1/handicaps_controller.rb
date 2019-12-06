@@ -1,4 +1,4 @@
-class HandicapsController < ApplicationController
+class Api::V1::HandicapsController < ApplicationController
   before_action :set_handicap, only: [:show, :update, :destroy]
 
   # GET /handicaps

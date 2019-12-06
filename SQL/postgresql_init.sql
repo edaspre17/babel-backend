@@ -1,7 +1,7 @@
 DROP SCHEMA IF EXISTS esope CASCADE;
 CREATE SCHEMA esope;
 
-CREATE TABLE esope.users(
+CREATE TABLE users(
     name varchar(55) NOT NULL,
     surname varchar(55) NOT NULL,
     pwd varchar(2055) NULL,
@@ -17,7 +17,7 @@ CREATE TABLE esope.users(
     version integer NOT NULL default 0,
     id_user serial primary key
 );
-CREATE TABLE esope.children(
+CREATE TABLE children(
     name varchar(55) NOT NULL,
     surname varchar(55) NOT NULL,
     birthday timestamp NOT NULL,
@@ -33,39 +33,39 @@ CREATE TABLE esope.children(
     version integer NOT NULL default 0,
     id_child serial primary key
 );
-CREATE TABLE esope.children_contacts(
-    id_user integer NOT NULL references esope.users(id_user),
-    id_child integer NOT NULL REFERENCES esope.children(id_child),
+CREATE TABLE children_contacts(
+    id_user integer NOT NULL references users(id_user),
+    id_child integer NOT NULL REFERENCES children(id_child),
     insert_date timestamp NOT NULL default now(),
     relation varchar(55) NOT NULL, 
     primary key (id_user, id_child)
 );
-CREATE TABLE esope.professionals_to_children(
+CREATE TABLE professionals_to_children(
     id_care serial primary key,
-    id_child integer NOT NULL references esope.children(id_child),
-    id_user_prof integer NOT NULL references esope.users(id_user),
+    id_child integer NOT NULL references children(id_child),
+    id_user_prof integer NOT NULL references users(id_user),
     start_care_date timestamp NOT NULL default now(),
     end_care_date timestamp NULL default NULL
 );
-CREATE TABLE esope.handicaps(
+CREATE TABLE handicaps(
     description varchar(1023) NOT NULL,
     id_handicap serial primary key
 );
-CREATE TABLE esope.handicaps_to_children(
+CREATE TABLE handicaps_to_children(
     comment varchar(55) null,
-    id_child integer NOT NULL references esope.children(id_child),
-    id_handicap integer NOT NULL references esope.handicaps(id_handicap),
+    id_child integer NOT NULL references children(id_child),
+    id_handicap integer NOT NULL references handicaps(id_handicap),
     primary key (id_child, id_handicap)
 );
-CREATE TABLE esope.mandates(
+CREATE TABLE mandates(
     instigator varchar(255) NOT NULL,
     demand varchar(1023) NOT NULL,
     -- IT concerns
     id_mandate serial primary key,
-    id_child integer NOT NULL references esope.children(id_child),
+    id_child integer NOT NULL references children(id_child),
     insert_date timestamp NOT NULL default now()
 );
-CREATE TABLE esope.game_sessions(
+CREATE TABLE game_sessions(
     startdate timestamp NOT NULL default now(),
     guardian_comment varchar(1023) NULL,
     prof_comment varchar(1023) NULL,
@@ -77,32 +77,32 @@ CREATE TABLE esope.game_sessions(
     finished_state integer NOT NULL CHECK (finished_state >= 0 AND finished_state <= 3),
     version integer NOT NULL default 0,    
     id_game serial primary key,
-    id_child integer NOT NULL references esope.children(id_child),
-    id_user_prof integer NOT NULL references esope.users(id_user),
-    mandate integer NOT NULL references esope.mandates(id_mandate)
+    id_child integer NOT NULL references children(id_child),
+    id_user_prof integer NOT NULL references users(id_user),
+    mandate integer NOT NULL references mandates(id_mandate)
 );
-CREATE TABLE esope.categories(
+CREATE TABLE categories(
     name varchar(55) NOT NULL,
     description varchar(255) NULL,
     -- IT concerns
     id_cat serial primary key
 );
-CREATE TABLE esope.selected_categories(
+CREATE TABLE selected_categories(
     sorting integer NOT NULL,
     status boolean NOT NULL,
     -- IT concerns
-    id_category integer NOT NULL references esope.categories(id_cat),
-    id_game integer NOT NULL references esope.game_sessions(id_game),
+    id_category integer NOT NULL references categories(id_cat),
+    id_game integer NOT NULL references game_sessions(id_game),
     primary key (id_category, id_game)
 );
-CREATE TABLE esope.pictures(
+CREATE TABLE pictures(
     description varchar(1023) NULL,
     -- IT concerns
     path varchar(1023) NULL UNIQUE,
     id_pic serial primary key,
-    id_category integer NOT NULL references esope.categories(id_cat)
+    id_category integer NOT NULL references categories(id_cat)
 );
-CREATE TABLE esope.selected_pictures(
+CREATE TABLE selected_pictures(
     note varchar(1023) NULL,
     child_tag boolean NULL,
     do_like boolean NULL,
@@ -115,8 +115,8 @@ CREATE TABLE esope.selected_pictures(
     step_two_done boolean NOT NULL,
     step_three_done boolean NOT NULL,
     -- IT concerns
-    id_pic integer NOT NULL references esope.pictures(id_pic),
-    id_game integer NOT NULL references esope.game_sessions(id_game), 
+    id_pic integer NOT NULL references pictures(id_pic),
+    id_game integer NOT NULL references game_sessions(id_game), 
     version integer NOT NULL default 0,
     primary key (id_pic, id_game)
 );

@@ -1,4 +1,4 @@
-class HandicapToChildrenController < ApplicationController
+class Api::V1::HandicapToChildrenController < ApplicationController
   before_action :set_handicap_to_child, only: [:show, :update, :destroy]
 
   # GET /handicap_to_children

@@ -1,4 +1,4 @@
-class ChildContactsController < ApplicationController
+class Api::V1::ChildContactsController < ApplicationController
   before_action :set_child_contact, only: [:show, :update, :destroy]
 
   # GET /child_contacts
