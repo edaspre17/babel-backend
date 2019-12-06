@@ -1,4 +1,4 @@
-class SelectedCategoriesController < ApplicationController
+class Api::V1::SelectedCategoriesController < ApplicationController
   before_action :set_selected_category, only: [:show, :update, :destroy]
 
   # GET /selected_categories

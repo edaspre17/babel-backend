@@ -1,4 +1,4 @@
-class SelectedPicturesController < ApplicationController
+class Api::V1::SelectedPicturesController < ApplicationController
   before_action :set_selected_picture, only: [:show, :update, :destroy]
 
   # GET /selected_pictures

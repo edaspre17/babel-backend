@@ -1,4 +1,4 @@
-class ProfessionnalToChildrenController < ApplicationController
+class Api::V1::ProfessionnalToChildrenController < ApplicationController
   before_action :set_professionnal_to_child, only: [:show, :update, :destroy]
 
   # GET /professionnal_to_children

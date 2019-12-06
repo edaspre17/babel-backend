@@ -1,4 +1,4 @@
-class MandatesController < ApplicationController
+class Api::V1::MandatesController < ApplicationController
   before_action :set_mandate, only: [:show, :update, :destroy]
 
   # GET /mandates
