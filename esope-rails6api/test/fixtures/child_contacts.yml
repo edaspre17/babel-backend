@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_user: 1
+  id_child: 1
+  insert_date: 2019-12-06 12:27:10
+  relation: MyString
+
+two:
+  id_user: 1
+  id_child: 1
+  insert_date: 2019-12-06 12:27:10
+  relation: MyString

@@ -1,0 +1,2 @@
+class ChildContact < ApplicationRecord
+end

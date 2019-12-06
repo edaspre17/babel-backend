@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  note: MyString
+  child_tag: false
+  do_like: false
+  is_happy: false
+  is_autonomous: false
+  priority: 1
+  would_like: false
+  step_one_done: false
+  step_two_done: false
+  step_three_done: false
+  id_pic: 1
+  id_game: 1
+  version: 1
+
+two:
+  note: MyString
+  child_tag: false
+  do_like: false
+  is_happy: false
+  is_autonomous: false
+  priority: 1
+  would_like: false
+  step_one_done: false
+  step_two_done: false
+  step_three_done: false
+  id_pic: 1
+  id_game: 1
+  version: 1
