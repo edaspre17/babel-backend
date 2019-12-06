@@ -1,0 +1,2 @@
+class ProfessionnalToChild < ApplicationRecord
+end

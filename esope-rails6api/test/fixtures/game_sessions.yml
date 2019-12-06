@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  startdate: 2019-12-06 12:39:13
+  guardian_comment: MyString
+  prof_comment: MyString
+  step_one: 1
+  step_two: 1
+  step_three: 1
+  finished_date: 2019-12-06 12:39:13
+  version: 1
+  id_game: 1
+  id_child: 1
+  id_user_prof: 1
+  mandate: 1
+
+two:
+  startdate: 2019-12-06 12:39:13
+  guardian_comment: MyString
+  prof_comment: MyString
+  step_one: 1
+  step_two: 1
+  step_three: 1
+  finished_date: 2019-12-06 12:39:13
+  version: 1
+  id_game: 1
+  id_child: 1
+  id_user_prof: 1
+  mandate: 1

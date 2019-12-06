@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  path: MyString
+  id_pic: 1
+  id_category: 1
+
+two:
+  description: MyString
+  path: MyString
+  id_pic: 1
+  id_category: 1

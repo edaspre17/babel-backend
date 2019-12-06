@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sorting: 1
+  status: false
+  id_category: 1
+  id_game: 1
+
+two:
+  sorting: 1
+  status: false
+  id_category: 1
+  id_game: 1
