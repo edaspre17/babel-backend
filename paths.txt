@@ -1,0 +1,13 @@
+Path
+	user	/login		/child			[POST] id_child
+						/user			[POST] password, id_user
+			/register	/prof			[POST] #TODO
+						/child			[POST] #TODO
+						/contact		[POST] id_child, relation
+			/archive					[POST] id_child
+			/handicap	/list			[GET]
+			/category	/list			[GET]
+			/image		/list			[GET]
+	game	/cat_sort					[PUT]	id_cat, id_game, sorting, status
+	game	/step_sort					[PUT]	step_order, step_identifier, id_game
+	game 	/image		/list			[PUT]	id_game, ids_image

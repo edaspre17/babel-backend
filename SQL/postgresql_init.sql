@@ -88,8 +88,8 @@ CREATE TABLE esope.categories(
     id_cat serial primary key
 );
 CREATE TABLE esope.selected_categories(
-    sorting integer NOT NULL,
-    status boolean NOT NULL,
+    sorting integer NULL,
+    status boolean NOT NULL default FALSE,
     -- IT concerns
     id_category integer NOT NULL references esope.categories(id_cat),
     id_game integer NOT NULL references esope.game_sessions(id_game),
