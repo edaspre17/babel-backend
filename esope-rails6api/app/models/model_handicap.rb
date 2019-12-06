@@ -1,0 +1,2 @@
+class ModelHandicap < ApplicationRecord
+end
