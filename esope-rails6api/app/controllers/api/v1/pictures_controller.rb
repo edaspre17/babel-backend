@@ -46,6 +46,6 @@ class Api::V1::PicturesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def picture_params
-      params.require(:picture).permit(:description, :path, :id_pic, :id_category)
+      params.require(:picture).permit(:description, :path, :picture, :category_id)
     end
 end

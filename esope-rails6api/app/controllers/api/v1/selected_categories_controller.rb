@@ -46,6 +46,6 @@ class Api::V1::SelectedCategoriesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def selected_category_params
-      params.require(:selected_category).permit(:sorting, :status, :id_category, :id_game)
+      params.require(:selected_category).permit(:sorting, :status, :category_id, :game_session_id)
     end
 end

@@ -1,6 +1,3 @@
-DROP SCHEMA IF EXISTS esope CASCADE;
-CREATE SCHEMA esope;
-
 CREATE TABLE users(
     name varchar(55) NOT NULL,
     surname varchar(55) NOT NULL,

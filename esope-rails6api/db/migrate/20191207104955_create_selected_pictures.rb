@@ -11,11 +11,9 @@ class CreateSelectedPictures < ActiveRecord::Migration[6.0]
       t.boolean :step_one_done
       t.boolean :step_two_done
       t.boolean :step_three_done
-      t.integer :id_pic
-      t.integer :id_game
+      t.belongs_to :picture, null: false, foreign_key: true
+      t.belongs_to :game_session, null: false, foreign_key: true
       t.integer :version
-
-      t.timestamps
     end
   end
 end

@@ -12,7 +12,7 @@ class SelectedCategoriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create selected_category" do
     assert_difference('SelectedCategory.count') do
-      post selected_categories_url, params: { selected_category: { id_category: @selected_category.id_category, id_game: @selected_category.id_game, sorting: @selected_category.sorting, status: @selected_category.status } }, as: :json
+      post selected_categories_url, params: { selected_category: { category_id: @selected_category.category_id, game_session_id: @selected_category.game_session_id, sorting: @selected_category.sorting, status: @selected_category.status } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class SelectedCategoriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update selected_category" do
-    patch selected_category_url(@selected_category), params: { selected_category: { id_category: @selected_category.id_category, id_game: @selected_category.id_game, sorting: @selected_category.sorting, status: @selected_category.status } }, as: :json
+    patch selected_category_url(@selected_category), params: { selected_category: { category_id: @selected_category.category_id, game_session_id: @selected_category.game_session_id, sorting: @selected_category.sorting, status: @selected_category.status } }, as: :json
     assert_response 200
   end
 

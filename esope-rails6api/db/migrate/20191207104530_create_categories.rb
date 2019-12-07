@@ -4,8 +4,6 @@ class CreateCategories < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :description
       t.integer :id_cat
-
-      t.timestamps
     end
   end
 end

@@ -1,7 +1,6 @@
 
 
 Rails.application.routes.draw do
-
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :selected_pictures
@@ -10,10 +9,10 @@ Rails.application.routes.draw do
       resources :categories
       resources :game_sessions
       resources :mandates
-      resources :handicap_to_children
+      resources :children_contacts
+      resources :handicaps_to_children
       resources :handicaps
-      resources :child_contacts
-      resources :professionnal_to_children
+      resources :professionals_to_children
       resources :children
       resources :users
     end
