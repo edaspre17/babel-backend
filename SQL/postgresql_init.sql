@@ -1,6 +1,6 @@
 DROP SCHEMA IF EXISTS esope CASCADE;
-CREATE SCHEMA esope;
-
+-- CREATE SCHEMA esope;
+-- Schema deleted : 
 CREATE TABLE users(
     name varchar(55) NOT NULL,
     surname varchar(55) NOT NULL,
