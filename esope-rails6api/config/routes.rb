@@ -9,7 +9,11 @@ Rails.application.routes.draw do
       resources :categories
       resources :game_sessions
       resources :mandates
-      resources :children_contacts
+      resources :children_contacts do
+        collection do
+          get 'contacts(/:id)', to: 'children_contacts#contacts'
+        end
+      end
       resources :handicaps_to_children
       resources :handicaps
       resources :professionals_to_children

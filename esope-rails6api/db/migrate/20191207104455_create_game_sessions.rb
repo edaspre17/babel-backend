@@ -9,7 +9,6 @@ class CreateGameSessions < ActiveRecord::Migration[6.0]
       t.integer :step_three
       t.integer :finished_state
       t.integer :version
-      t.integer :id_game
       t.belongs_to :child, null: false, foreign_key: true
       t.belongs_to :user, null: false, foreign_key: true
       t.belongs_to :mandate, null: false, foreign_key: true
