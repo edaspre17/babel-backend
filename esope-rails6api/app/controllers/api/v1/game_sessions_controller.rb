@@ -1,5 +1,9 @@
 class Api::V1::GameSessionsController < ApplicationController
-  before_action :set_game_session, only: [:show, :update, :destroy]
+  before_action :set_game_session, only: [:show, :update, :latest] #do not autorize users to :destroy
+
+  # ##############
+  # Auto-genrated
+  # ##############
 
   # GET /game_sessions
   def index
@@ -37,6 +41,26 @@ class Api::V1::GameSessionsController < ApplicationController
   def destroy
     @game_session.destroy
   end
+
+  # ####################
+  # Programmer's attempt
+  # ####################
+
+  # POST /game_sessions/#latest
+  def latest
+    @test = 1
+    @latest = GameSession.find_by_sql(["SELECT * FROM game_sessions g 
+      INNER JOIN mandates m ON m.id_mandate = g.mandate 
+      INNER JOIN selected_categories sc ON sc.id_game = g.id_game 
+      INNER JOIN selected_pictures sp ON sp.id_game = g.id_game
+      WHERE g.id_child = ? AND  g.startdate >= (SELECT MAX(j.startdate) FROM game_sessions j WHERE j.id_child = ?)", params[:id],params[:id]]) # Returns as many tuples as there's pictures in the game session.
+      render json: @test
+  end
+
+
+  # ##############
+  # Auto-genrated
+  # ##############
 
   private
     # Use callbacks to share common setup or constraints between actions.

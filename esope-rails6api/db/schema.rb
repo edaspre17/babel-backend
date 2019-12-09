@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2019_12_07_104955) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "id_cat"
   end
 
   create_table "children", force: :cascade do |t|
@@ -34,7 +33,6 @@ ActiveRecord::Schema.define(version: 2019_12_07_104955) do
     t.string "note"
     t.boolean "archived"
     t.integer "version"
-    t.integer "id_child"
   end
 
   create_table "children_contacts", force: :cascade do |t|
@@ -55,7 +53,6 @@ ActiveRecord::Schema.define(version: 2019_12_07_104955) do
     t.integer "step_three"
     t.integer "finished_state"
     t.integer "version"
-    t.integer "id_game"
     t.bigint "child_id", null: false
     t.bigint "user_id", null: false
     t.bigint "mandate_id", null: false
@@ -66,7 +63,6 @@ ActiveRecord::Schema.define(version: 2019_12_07_104955) do
 
   create_table "handicaps", force: :cascade do |t|
     t.string "description"
-    t.integer "id_handicap"
   end
 
   create_table "handicaps_to_children", force: :cascade do |t|
@@ -78,9 +74,8 @@ ActiveRecord::Schema.define(version: 2019_12_07_104955) do
   end
 
   create_table "mandates", force: :cascade do |t|
-    t.string "investigator"
+    t.string "instigator"
     t.string "demand"
-    t.integer "id_mandate"
     t.bigint "child_id", null: false
     t.datetime "insert_date"
     t.index ["child_id"], name: "index_mandates_on_child_id"
@@ -89,13 +84,11 @@ ActiveRecord::Schema.define(version: 2019_12_07_104955) do
   create_table "pictures", force: :cascade do |t|
     t.string "description"
     t.string "path"
-    t.integer "picture"
     t.bigint "category_id", null: false
     t.index ["category_id"], name: "index_pictures_on_category_id"
   end
 
   create_table "professionals_to_children", force: :cascade do |t|
-    t.integer "id_care"
     t.bigint "user_id", null: false
     t.bigint "child_id", null: false
     t.datetime "start_care_date"
@@ -139,12 +132,11 @@ ActiveRecord::Schema.define(version: 2019_12_07_104955) do
     t.string "note"
     t.boolean "archived"
     t.string "phone"
-    t.string "email"
+    t.string "email", null: false
     t.string "job"
     t.datetime "inserts_date"
+    t.integer "user_level"
     t.integer "version"
-    t.integer "id_user"
-    t.integer "user_level", null: false
   end
 
   add_foreign_key "children_contacts", "children"
