@@ -13,13 +13,6 @@ class Api::V1::UsersController < ApplicationController
     render json: @user
   end
 
-  # GET /users/login/
-  def login
-    @user = User.find_by_sql(["SELECT * FROM users WHERE pwd = ? AND email = ?", user_params['pwd'], user_params['email']])
-    #@user.pwd = "JeSuisUnMotDePasse"
-    render json: @user
-  end
-
   # POST /users
   def create
     @user = User.new(user_params)
@@ -30,6 +23,12 @@ class Api::V1::UsersController < ApplicationController
       render json: @user.errors, status: :unprocessable_entity
     end
   end
+
+    # POST /users/login/
+    def login
+      @user = User.find_by_sql(["SELECT id, name, surname, imagepath, note, phone, email, job, inserts_date, version, user_level FROM users WHERE pwd = ? AND email = ?", user_params['pwd'], user_params['email']])
+      render json: @user
+    end
 
   # PATCH/PUT /users/1
   def update

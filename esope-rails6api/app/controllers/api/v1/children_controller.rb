@@ -24,6 +24,13 @@ class Api::V1::ChildrenController < ApplicationController
     end
   end
 
+  # POST /children/login/
+  def login
+    @user = Child.find_by_sql(["SELECT id, name, surname, birthday, lang, hand, school, school_type, 
+    school_lvl, imagepath, note, version FROM children WHERE id = ? AND archived IS NULL OR archived = false", child_params['id']])
+    render json: @user
+  end
+
   # PATCH/PUT /children/1
   def update
     if @child.update(child_params)
@@ -46,6 +53,6 @@ class Api::V1::ChildrenController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def child_params
-      params.require(:child).permit(:name, :surname, :birthday, :lang, :hand, :school, :school_type, :school_lvl, :imagepath, :note, :archived, :version, :id_child)
+      params.require(:child).permit(:name, :surname, :birthday, :lang, :hand, :school, :school_type, :school_lvl, :imagepath, :note, :archived, :version, :id_child, :id)
     end
 end

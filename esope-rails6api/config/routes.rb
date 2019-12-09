@@ -20,10 +20,14 @@ Rails.application.routes.draw do
       end
       resources :handicaps
       resources :professionals_to_children
-      resources :children
+      resources :children do
+        collection do
+          post 'login', to: 'children#login'
+        end
+      end
       resources :users do
         collection do
-          get 'login', to: 'users#login'
+          post 'login', to: 'users#login'
         end
       end
     end
