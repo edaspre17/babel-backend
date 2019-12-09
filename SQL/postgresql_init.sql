@@ -84,9 +84,9 @@ CREATE TABLE categories(
     -- IT concerns
     id_cat serial primary key
 );
-CREATE TABLE selected_categories(
-    sorting integer NOT NULL,
-    status boolean NOT NULL,
+CREATE TABLE esope.selected_categories(
+    sorting integer NULL,
+    status boolean NOT NULL default FALSE,
     -- IT concerns
     id_category integer NOT NULL references categories(id_cat),
     id_game integer NOT NULL references game_sessions(id_game),

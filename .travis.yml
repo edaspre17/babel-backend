@@ -1,6 +1,8 @@
-before_script: cd esope-rails6api
+before_script: cd esope_rails6api
 language: ruby
 rvm:
-- 2.6.5
-env:
-- DB=postgresql
+ - 2.6.5
+ - ruby
+ env:
+ - DB=postgresql
+
