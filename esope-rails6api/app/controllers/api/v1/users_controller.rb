@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy, :login]
+  before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /users
   def index
@@ -15,14 +15,11 @@ class Api::V1::UsersController < ApplicationController
 
   # GET /users/login/
   def login
-    @user = User.(["SELECT * FROM users WHERE id =  ?"], params[:id])
-    if @user === user_params['pwd']
-      @user.pwd = 'JeSuisUnMotDePasse'
-      render json @user
-    else
-      render 'non'
-    end
+    @user = User.find_by_sql(["SELECT * FROM users WHERE pwd = ? AND email = ?", user_params['pwd'], user_params['email']])
+    #@user.pwd = "JeSuisUnMotDePasse"
+    render json: @user
   end
+
   # POST /users
   def create
     @user = User.new(user_params)
