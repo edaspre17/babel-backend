@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_07_104955) do
+ActiveRecord::Schema.define(version: 2019_12_08_175511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2019_12_07_104955) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "id_cat"
   end
 
   create_table "children", force: :cascade do |t|
@@ -34,7 +33,6 @@ ActiveRecord::Schema.define(version: 2019_12_07_104955) do
     t.string "note"
     t.boolean "archived"
     t.integer "version"
-    t.integer "id_child"
   end
 
   create_table "children_contacts", force: :cascade do |t|
@@ -55,7 +53,6 @@ ActiveRecord::Schema.define(version: 2019_12_07_104955) do
     t.integer "step_three"
     t.integer "finished_state"
     t.integer "version"
-    t.integer "id_game"
     t.bigint "child_id", null: false
     t.bigint "user_id", null: false
     t.bigint "mandate_id", null: false
@@ -66,7 +63,6 @@ ActiveRecord::Schema.define(version: 2019_12_07_104955) do
 
   create_table "handicaps", force: :cascade do |t|
     t.string "description"
-    t.integer "id_handicap"
   end
 
   create_table "handicaps_to_children", force: :cascade do |t|
@@ -80,28 +76,40 @@ ActiveRecord::Schema.define(version: 2019_12_07_104955) do
   create_table "mandates", force: :cascade do |t|
     t.string "investigator"
     t.string "demand"
-    t.integer "id_mandate"
     t.bigint "child_id", null: false
     t.datetime "insert_date"
     t.index ["child_id"], name: "index_mandates_on_child_id"
   end
 
+  create_table "movies", force: :cascade do |t|
+    t.string "title"
+    t.string "genre"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "pictures", force: :cascade do |t|
     t.string "description"
     t.string "path"
-    t.integer "picture"
     t.bigint "category_id", null: false
     t.index ["category_id"], name: "index_pictures_on_category_id"
   end
 
   create_table "professionals_to_children", force: :cascade do |t|
-    t.integer "id_care"
     t.bigint "user_id", null: false
     t.bigint "child_id", null: false
     t.datetime "start_care_date"
     t.datetime "end_care_date"
     t.index ["child_id"], name: "index_professionals_to_children_on_child_id"
     t.index ["user_id"], name: "index_professionals_to_children_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.bigint "movie_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id"], name: "index_reviews_on_movie_id"
   end
 
   create_table "selected_categories", force: :cascade do |t|
@@ -142,9 +150,8 @@ ActiveRecord::Schema.define(version: 2019_12_07_104955) do
     t.string "email"
     t.string "job"
     t.datetime "inserts_date"
+    t.integer "user_level"
     t.integer "version"
-    t.integer "id_user"
-    t.integer "user_level", null: false
   end
 
   add_foreign_key "children_contacts", "children"
@@ -158,6 +165,7 @@ ActiveRecord::Schema.define(version: 2019_12_07_104955) do
   add_foreign_key "pictures", "categories"
   add_foreign_key "professionals_to_children", "children"
   add_foreign_key "professionals_to_children", "users"
+  add_foreign_key "reviews", "movies"
   add_foreign_key "selected_categories", "categories"
   add_foreign_key "selected_categories", "game_sessions"
   add_foreign_key "selected_pictures", "game_sessions"
