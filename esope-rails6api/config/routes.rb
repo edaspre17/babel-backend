@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :selected_pictures
+      resources :selected_pictures do
+          collection do
+            post 'ChoosenPictures(/:id)', to: 'selected_pictures#ChoosenPictures'
+          end
+      end
       resources :pictures
-      resources :selected_categories
+      resources :selected_categories do
+        collection do
+          post 'ChoosenCategories(/:id)', to: 'selected_categories#ChoosenCategories'
+        end
+    end
       resources :categories
       resources :game_sessions do
         collection do
