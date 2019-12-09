@@ -1,5 +1,5 @@
 class Api::V1::GameSessionsController < ApplicationController
-  before_action :set_game_session, only: [:show, :update, :latest] #do not autorize users to :destroy
+  before_action :set_game_session, only: [:show, :update]
 
   # ##############
   # Auto-genrated
@@ -46,15 +46,14 @@ class Api::V1::GameSessionsController < ApplicationController
   # Programmer's attempt
   # ####################
 
-  # POST /game_sessions/#latest
+  # POST /game_sessions/latest/1
   def latest
-    @test = 1
     @latest = GameSession.find_by_sql(["SELECT * FROM game_sessions g 
-      INNER JOIN mandates m ON m.id_mandate = g.mandate 
-      INNER JOIN selected_categories sc ON sc.id_game = g.id_game 
-      INNER JOIN selected_pictures sp ON sp.id_game = g.id_game
-      WHERE g.id_child = ? AND  g.startdate >= (SELECT MAX(j.startdate) FROM game_sessions j WHERE j.id_child = ?)", params[:id],params[:id]]) # Returns as many tuples as there's pictures in the game session.
-      render json: @test
+      INNER JOIN mandates m ON m.id = g.mandate_id
+      INNER JOIN selected_categories sc ON sc.game_session_id = g.id 
+      INNER JOIN selected_pictures sp ON sp.game_session_id = g.id
+      WHERE g.child_id = ? AND  g.start_date >= (SELECT MAX(j.start_date) FROM game_sessions j WHERE j.child_id = ?)", params[:id],params[:id]]) # Returns as many tuples as there's pictures in the game session.
+      render json: @latest
   end
 
 
