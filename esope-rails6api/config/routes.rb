@@ -18,10 +18,11 @@ Rails.application.routes.draw do
       resources :handicaps
       resources :professionals_to_children
       resources :children
-      resources :users
+      resources :users do
         collection do
-          get 'connection(/:id)', to 'users#connection'
+          get 'login', to: 'users#login'
         end
+      end
     end
   end
 end
