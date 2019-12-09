@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       resources :children
       resources :users do
         collection do
-          get 'connection(/:id)', to: 'users#connection'
+          get 'login', to: 'users#login'
         end
       end
     end
