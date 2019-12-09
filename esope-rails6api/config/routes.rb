@@ -11,10 +11,15 @@ Rails.application.routes.draw do
       resources :mandates
       resources :children_contacts do
         collection do
-          get 'contacts(/:id)', to: 'children_contacts#contacts'
+          get 'listChildren(/:id)', to: 'children_contacts#listChildren'
+          get 'listContacts(/:id)', to: 'children_contacts#listContacts'
         end
       end
-      resources :handicaps_to_children
+      resources :handicaps_to_children do
+        collection do 
+          get 'myHandicaps(/:id)', to: 'handicaps_to_children#myHandicaps'
+        end
+      end
       resources :handicaps
       resources :professionals_to_children
       resources :children

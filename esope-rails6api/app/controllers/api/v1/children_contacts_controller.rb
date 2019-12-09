@@ -9,21 +9,24 @@ class Api::V1::ChildrenContactsController < ApplicationController
 
   # GET /children_contacts/1
   def show
-    @i = children_contact_params['option']
-    #renvoie la liste des proches qu'a eu un enfant
-      @cc = ChildrenContact.find_by_sql(["Select * FROM users u , children_contacts cc
-      WHERE u.id = cc.user_id AND cc.child_id = ? AND u.user_level = 0", params[:id]])
-    render json: @cc
+    render json: @children_contact
   end
 
-  # GET /children_contacts/contacts/1
-  def contacts 
+  # GET /children_contacts/listChildren/1
+  #renvoie la liste des enfants d'un tuteur/parent
+  def listChildren 
     @cc = ChildrenContact.find_by_sql(["Select * FROM children_contacts cc, children c 
     WHERE cc.user_id = ? AND cc.child_id = c.id", params[:id]])
     render json: @cc
   end
-
   
+  # GET /children_contacts/listChildren/1
+  #renvoie la liste des proches qu'a eu un enfant
+  def listContacts
+    @cc = ChildrenContact.find_by_sql(["Select * FROM users u , children_contacts cc
+    WHERE u.id = cc.user_id AND cc.child_id = ? AND u.user_level = 0", params[:id]])
+    render json: @cc
+  end
 
   # POST /children_contacts
   def create
