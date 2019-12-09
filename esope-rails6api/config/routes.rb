@@ -19,6 +19,9 @@ Rails.application.routes.draw do
       resources :professionals_to_children
       resources :children
       resources :users
+        collection do
+          get 'connection(/:id)', to 'users#connection'
+        end
     end
   end
 end

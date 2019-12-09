@@ -13,6 +13,9 @@ class Api::V1::UsersController < ApplicationController
     render json: @user
   end
 
+  def connection
+    #@psw = User.("SELECT ")
+  end
   # POST /users
   def create
     @user = User.new(user_params)

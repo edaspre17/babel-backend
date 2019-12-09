@@ -19,7 +19,7 @@ class Api::V1::ChildrenContactsController < ApplicationController
   # GET /children_contacts/contacts/1
   def contacts 
     @cc = ChildrenContact.find_by_sql(["Select * FROM children_contacts cc, children c 
-    WHERE cc.user_id = 6 AND cc.child_id = c.id", params[:id]])
+    WHERE cc.user_id = ? AND cc.child_id = c.id", params[:id]])
     render json: @cc
   end
 
