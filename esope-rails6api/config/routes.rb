@@ -5,7 +5,11 @@ Rails.application.routes.draw do
       resources :pictures
       resources :selected_categories
       resources :categories
-      resources :game_sessions
+      resources :game_sessions do
+        collection do
+          post 'latest(/:id)', to: 'game_sessions#latest'
+        end
+      end
       resources :mandates
       resources :children_contacts do
         collection do
