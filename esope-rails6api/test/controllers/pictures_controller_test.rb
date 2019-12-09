@@ -12,7 +12,7 @@ class PicturesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create picture" do
     assert_difference('Picture.count') do
-      post pictures_url, params: { picture: { description: @picture.description, id_category: @picture.id_category, id_pic: @picture.id_pic, path: @picture.path } }, as: :json
+      post pictures_url, params: { picture: { category_id: @picture.category_id, description: @picture.description, path: @picture.path, picture: @picture.picture } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class PicturesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update picture" do
-    patch picture_url(@picture), params: { picture: { description: @picture.description, id_category: @picture.id_category, id_pic: @picture.id_pic, path: @picture.path } }, as: :json
+    patch picture_url(@picture), params: { picture: { category_id: @picture.category_id, description: @picture.description, path: @picture.path, picture: @picture.picture } }, as: :json
     assert_response 200
   end
 

@@ -46,6 +46,6 @@ class Api::V1::SelectedPicturesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def selected_picture_params
-      params.require(:selected_picture).permit(:note, :child_tag, :do_like, :is_happy, :is_autonomous, :priority, :would_like, :step_one_done, :step_two_done, :step_three_done, :id_pic, :id_game, :version)
+      params.require(:selected_picture).permit(:note, :child_tag, :do_like, :is_happy, :is_autonomous, :priority, :would_like, :step_one_done, :step_two_done, :step_three_done, :picture_id, :game_session_id, :version)
     end
 end

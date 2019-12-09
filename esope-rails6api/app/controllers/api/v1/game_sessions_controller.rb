@@ -70,6 +70,6 @@ class Api::V1::GameSessionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def game_session_params
-      params.require(:game_session).permit(:startdate, :guardian_comment, :prof_comment, :step_one, :step_two, :step_three, :finished_date, :version, :id_game, :id_child, :id_user_prof, :mandate)
+      params.require(:game_session).permit(:start_date, :guardian_comment, :prof_comment, :step_one, :step_two, :step_three, :finished_state, :version, :id_game, :child_id, :user_id, :mandate_id)
     end
 end

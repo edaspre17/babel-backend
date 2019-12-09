@@ -3,11 +3,11 @@
 one:
   description: MyString
   path: MyString
-  id_pic: 1
-  id_category: 1
+  picture: 1
+  category: one
 
 two:
   description: MyString
   path: MyString
-  id_pic: 1
-  id_category: 1
+  picture: 1
+  category: two

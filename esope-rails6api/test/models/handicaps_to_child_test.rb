@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ProfessionnalToChildTest < ActiveSupport::TestCase
+class HandicapsToChildTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

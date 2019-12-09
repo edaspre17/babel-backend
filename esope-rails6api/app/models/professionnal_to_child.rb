@@ -1,2 +1,0 @@
-class ProfessionnalToChild < ApplicationRecord
-end

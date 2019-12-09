@@ -13,6 +13,9 @@ class Api::V1::UsersController < ApplicationController
     render json: @user
   end
 
+  def connection
+    #@psw = User.("SELECT ")
+  end
   # POST /users
   def create
     @user = User.new(user_params)
@@ -46,6 +49,6 @@ class Api::V1::UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:name, :surname, :pwd, :imagepath, :note, :archived, :phone, :email, :job, :inserts_date, :user_level, :version, :id_user)
+      params.require(:user).permit(:name, :surname, :pwd, :imagepath, :note, :archived, :phone, :email, :job, :inserts_date, :version, :child_id, :option, :user_id, :id)
     end
 end

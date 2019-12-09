@@ -10,8 +10,7 @@ one:
   phone: MyString
   email: MyString
   job: MyString
-  inserts_date: 2019-12-06 12:01:04
-  user_level: 1
+  inserts_date: 2019-12-07 11:30:33
   version: 1
   id_user: 1
 
@@ -25,7 +24,6 @@ two:
   phone: MyString
   email: MyString
   job: MyString
-  inserts_date: 2019-12-06 12:01:04
-  user_level: 1
+  inserts_date: 2019-12-07 11:30:33
   version: 1
   id_user: 1

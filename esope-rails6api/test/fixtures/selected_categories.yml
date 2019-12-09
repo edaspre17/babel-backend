@@ -3,11 +3,11 @@
 one:
   sorting: 1
   status: false
-  id_category: 1
-  id_game: 1
+  category: one
+  game_session: one
 
 two:
   sorting: 1
   status: false
-  id_category: 1
-  id_game: 1
+  category: two
+  game_session: two

@@ -12,7 +12,7 @@ class SelectedPicturesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create selected_picture" do
     assert_difference('SelectedPicture.count') do
-      post selected_pictures_url, params: { selected_picture: { child_tag: @selected_picture.child_tag, do_like: @selected_picture.do_like, id_game: @selected_picture.id_game, id_pic: @selected_picture.id_pic, is_autonomous: @selected_picture.is_autonomous, is_happy: @selected_picture.is_happy, note: @selected_picture.note, priority: @selected_picture.priority, step_one_done: @selected_picture.step_one_done, step_three_done: @selected_picture.step_three_done, step_two_done: @selected_picture.step_two_done, version: @selected_picture.version, would_like: @selected_picture.would_like } }, as: :json
+      post selected_pictures_url, params: { selected_picture: { child_tag: @selected_picture.child_tag, do_like: @selected_picture.do_like, game_session_id: @selected_picture.game_session_id, is_autonomous: @selected_picture.is_autonomous, is_happy: @selected_picture.is_happy, note: @selected_picture.note, picture_id: @selected_picture.picture_id, priority: @selected_picture.priority, step_one_done: @selected_picture.step_one_done, step_three_done: @selected_picture.step_three_done, step_two_done: @selected_picture.step_two_done, version: @selected_picture.version, would_like: @selected_picture.would_like } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class SelectedPicturesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update selected_picture" do
-    patch selected_picture_url(@selected_picture), params: { selected_picture: { child_tag: @selected_picture.child_tag, do_like: @selected_picture.do_like, id_game: @selected_picture.id_game, id_pic: @selected_picture.id_pic, is_autonomous: @selected_picture.is_autonomous, is_happy: @selected_picture.is_happy, note: @selected_picture.note, priority: @selected_picture.priority, step_one_done: @selected_picture.step_one_done, step_three_done: @selected_picture.step_three_done, step_two_done: @selected_picture.step_two_done, version: @selected_picture.version, would_like: @selected_picture.would_like } }, as: :json
+    patch selected_picture_url(@selected_picture), params: { selected_picture: { child_tag: @selected_picture.child_tag, do_like: @selected_picture.do_like, game_session_id: @selected_picture.game_session_id, is_autonomous: @selected_picture.is_autonomous, is_happy: @selected_picture.is_happy, note: @selected_picture.note, picture_id: @selected_picture.picture_id, priority: @selected_picture.priority, step_one_done: @selected_picture.step_one_done, step_three_done: @selected_picture.step_three_done, step_two_done: @selected_picture.step_two_done, version: @selected_picture.version, would_like: @selected_picture.would_like } }, as: :json
     assert_response 200
   end
 

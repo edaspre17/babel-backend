@@ -1,7 +1,3 @@
-DROP SCHEMA IF EXISTS esope CASCADE;
-DROP SCHEMA IF EXISTS public CASCADE;
-CREATE SCHEMA public;
-
 CREATE TABLE users(
     name varchar(55) NOT NULL,
     surname varchar(55) NOT NULL,
