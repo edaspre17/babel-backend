@@ -19,7 +19,7 @@ class Api::V1::GameSessionsController < ApplicationController
 
   # POST /game_sessions
   def create
-    @game_session = GameSession.new(game_session_params)
+    @game_session = GameSession.new(game_session_params) #maybe modifier
 
     if @game_session.save
       render json: @game_session, status: :created, location: @game_session

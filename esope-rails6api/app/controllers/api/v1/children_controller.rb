@@ -13,6 +13,11 @@ class Api::V1::ChildrenController < ApplicationController
     render json: @child
   end
 
+  # GET/listArchive
+  def listArchive
+    @children = Child.find_by_sql(["SELECT * FROM children WHERE archived = true"])
+  end
+
   # POST /children
   def create
     @child = Child.new(child_params)
@@ -26,9 +31,9 @@ class Api::V1::ChildrenController < ApplicationController
 
   # POST /children/login/
   def login
-    @user = Child.find_by_sql(["SELECT id, name, surname, birthday, lang, hand, school, school_type, 
+    @child = Child.find_by_sql(["SELECT id, name, surname, birthday, lang, hand, school, school_type, 
     school_lvl, imagepath, note, version FROM children WHERE id = ? AND archived IS NULL OR archived = false", child_params['id']])
-    render json: @user
+    render json: @child
   end
 
   # PATCH/PUT /children/1
