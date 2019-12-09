@@ -11,29 +11,29 @@ INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux h
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux habitudes de déplacement',5,'/marcher.jpg');
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux habitudes de déplacement',5,'/traverser.jpg  ');
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux habitudes de déplacement',5,'/velo.jpg');
-INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux habitudes de déplacement',5,'/voiture.jpg');
+INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux habitudes de déplacement',5,'/voiture.jpg'); --5
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux habitudes de loisirs',7,'/casque et ordi.jpg'); 
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux habitudes de loisirs',7,'/écrire.jpg');
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux habitudes de loisirs',7,'/Lire.jpg');
-INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux habitudes de loisirs',7,'/television.jpg');
+INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux habitudes de loisirs',7,'/television.jpg'); --9
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux habitures de vie au logis', 4, '/allumer lumiere.jpg'); 
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux habitures de vie au logis', 4, '/balayer.jpg');
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux habitures de vie au logis', 4, '/machine à laver.jpg');
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux habitures de vie au logis', 4, '/passer d une pièce à l autre.jpg');
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux habitures de vie au logis', 4, '/prothèse.jpg'); 
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux habitures de vie au logis', 4, '/ranger son espace.jpg');
-INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux habitures de vie au logis', 4, '/vaisselle def.jpg');
+INSERT INTO pictures(description,id_category,path) VALUES ('Image relative aux habitures de vie au logis', 4, '/vaisselle def.jpg'); --16
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relatives à la nutrition', 1,'/boire tasse.jpg');
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relatives à la nutrition', 1,'/dresserlatable.jpg');
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relatives à la nutrition', 1,'/manger au restaurant.jpg');
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relatives à la nutrition', 1,'/manger avec les mains.jpg');
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relatives à la nutrition', 1,'/preěparer a manger.jpg');
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relatives à la nutrition', 1,'/sandwich def.jpg');
-INSERT INTO pictures(description,id_category,path) VALUES ('Image relatives à la nutrition', 1,'/serviraliments.jpg');
+INSERT INTO pictures(description,id_category,path) VALUES ('Image relatives à la nutrition', 1,'/serviraliments.jpg'); --23
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative à un truc',3,'parler à des adultes.jpg');
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative à un truc',3,'parler en communauté.jpg');
-INSERT INTO pictures(description,id_category,path) VALUES ('Image relative à un truc',3,'téléphone.jpg');
-INSERT INTO pictures(description,id_category,path) VALUES ('Image relative à un truc',6,'acheter .jpg');
+INSERT INTO pictures(description,id_category,path) VALUES ('Image relative à un truc',3,'téléphone.jpg'); --26
+INSERT INTO pictures(description,id_category,path) VALUES ('Image relative à un truc',6,'acheter .jpg'); -- 27
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative à un truc',2,'laver les mains.jpg');
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative à un truc',2,'urgence.jpg');
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative à un truc',2,'brosser cheveux.jpg');
@@ -50,7 +50,7 @@ INSERT INTO pictures(description,id_category,path) VALUES ('Image relative à un
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative à un truc',2,'s essuyer.jpg');
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative à un truc',2,'s habiller.jpg');
 INSERT INTO pictures(description,id_category,path) VALUES ('Image relative à un truc',2,'s habiller-tirette.jpg');
-INSERT INTO pictures(description,id_category,path) VALUES ('Image relative à un truc',2,'toilettes.jpg');
+INSERT INTO pictures(description,id_category,path) VALUES ('Image relative à un truc',2,'toilettes.jpg'); --44
 -- Children
 INSERT INTO children(name,surname,birthday,lang,hand,school,school_lvl,school_type,note) VALUES ('NotADeleguee','childsurname1',TO_TIMESTAMP('2015-01-01','YYYY-MM-DD'),'FR','Gaucher','Enseignement ordinaire','schoolLVL',NULL,'note1');--1
 INSERT INTO children(name,surname,birthday,lang,hand,school,school_lvl,school_type,note) VALUES ('FinallyGone','childsurname2',TO_TIMESTAMP('2015-02-02','YYYY-MM-DD'),'NL','Gaucher','Enseignement ordinaire','schoolLVL',NULL,'note2');--2
@@ -134,3 +134,69 @@ INSERT INTO handicaps_to_children(id_child,id_handicap,comment) VALUES (8,12,'en
 INSERT INTO handicaps_to_children(id_child,id_handicap,comment) VALUES (9,11,'comment');
 INSERT INTO handicaps_to_children(id_child,id_handicap,comment) VALUES (9,12,'troubles de l attention');
 INSERT INTO handicaps_to_children(id_child,id_handicap,comment) VALUES (9,6,'bilatéral');
+-- Mandates
+INSERT INTO mandates(id_child,instigator,demand,insert_date) VALUES (1,'Parents','Demande de mandat parce que voilà',TO_TIMESTAMP('2018-01-01 01:01:01','YYYY-MM-DD HH24:MI:SS')); --1
+INSERT INTO mandates(id_child,instigator,demand,insert_date) VALUES (3,'Parents','Demande de mandat parce que voilà',TO_TIMESTAMP('2018-03-03 03:03:03','YYYY-MM-DD HH24:MI:SS')); --2
+INSERT INTO mandates(id_child,instigator,demand,insert_date) VALUES (1,'Parents','Demande de mandat parce que voilà',TO_TIMESTAMP('2018-05-05 05:05:05','YYYY-MM-DD HH24:MI:SS')); --3
+INSERT INTO mandates(id_child,instigator,demand,insert_date) VALUES (6,'Parents','Demande de mandat parce que voilà',TO_TIMESTAMP('2018-06-06 06:06:06','YYYY-MM-DD HH24:MI:SS')); --4
+-- Game Sessions
+INSERT INTO game_sessions(mandate,id_child,id_user_prof,startdate,finished_state,step_one,step_two,step_three,guardian_comment,prof_comment) VALUES (1,1,11,TO_TIMESTAMP('2018-02-12 02:21:21','YYYY-MM-DD HH24:MI:SS'),3,1,2,0,'guardian comment','prof comment');-- 1
+INSERT INTO game_sessions(mandate,id_child,id_user_prof,startdate,finished_state,step_one,step_two,step_three,guardian_comment,prof_comment) VALUES (2,3,13,TO_TIMESTAMP('2018-05-15 05:51:51','YYYY-MM-DD HH24:MI:SS'),3,2,1,0,'guardian comment','prof comment');-- 2
+INSERT INTO game_sessions(mandate,id_child,id_user_prof,startdate,finished_state,step_one,step_two,step_three,guardian_comment,prof_comment) VALUES (3,1,12,TO_TIMESTAMP('2018-05-15 05:51:51','YYYY-MM-DD HH24:MI:SS'),2,1,0,2,'guardian comment','prof comment');-- 3
+INSERT INTO game_sessions(mandate,id_child,id_user_prof,startdate,finished_state,step_one,step_two,step_three,guardian_comment,prof_comment) VALUES (4,6,12,TO_TIMESTAMP('2018-07-17 07:21:21','YYYY-MM-DD HH24:MI:SS'),3,0,1,2,'guardian comment','prof comment');-- 4
+-- Selected Categories: 4 pour game1, 2 pour game2, 1 pour game3 et 7 pour game4
+INSERT INTO selected_categories(id_category,id_game,sorting,status) VALUES (1,1,1,true);-- 1
+INSERT INTO selected_categories(id_category,id_game,sorting,status) VALUES (5,1,2,true);-- 1
+INSERT INTO selected_categories(id_category,id_game,sorting,status) VALUES (7,1,3,true);-- 1
+INSERT INTO selected_categories(id_category,id_game,sorting,status) VALUES (3,1,4,true);-- 1
+INSERT INTO selected_categories(id_category,id_game,sorting,status) VALUES (1,2,1,true);-- 2
+INSERT INTO selected_categories(id_category,id_game,sorting,status) VALUES (5,2,2,true);-- 2
+INSERT INTO selected_categories(id_category,id_game,sorting,status) VALUES (2,3,1,true);-- 3
+INSERT INTO selected_categories(id_category,id_game,sorting,status) VALUES (2,4,1,true);-- 4
+INSERT INTO selected_categories(id_category,id_game,sorting,status) VALUES (4,4,2,true);-- 4
+INSERT INTO selected_categories(id_category,id_game,sorting,status) VALUES (6,4,3,true);-- 4 
+INSERT INTO selected_categories(id_category,id_game,sorting,status) VALUES (7,4,4,true);-- 4 
+INSERT INTO selected_categories(id_category,id_game,sorting,status) VALUES (1,4,5,true);-- 4 
+INSERT INTO selected_categories(id_category,id_game,sorting,status) VALUES (5,4,6,true);-- 4 
+INSERT INTO selected_categories(id_category,id_game,sorting,status) VALUES (3,4,7,true);-- 4 
+-- Selected Pictures
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (17,1,true,true,true,'note',false,false,true,false,NULL,false); -- 1,1
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (23,1,true,true,true,'note',false,true,false,true,NULL,false); -- 1,1
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (20,1,true,true,true,'note',false,true,true,true,NULL,false); -- 1,1
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (1,1,true,true,true,'note',true,false,true,true,NULL,false); -- 5,1
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (2,1,true,true,true,'note',true,true,false,true,NULL,false); -- 5,1
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (5,1,true,true,true,'note',false,true,true,true,NULL,false); -- 5,1
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (6,1,true,true,true,'note',false,true,false,true,NULL,false); -- 7,1
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (9,1,true,true,true,'note',false,true,true,false,NULL,true); -- 7,1
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (8,1,true,true,true,'note',false,true,true,true,NULL,false); -- 7,1
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (24,1,true,true,true,'note',false,true,false,true,NULL,false); -- 3,1
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (25,1,true,true,true,'note',false,true,true,true,NULL,false); -- 3,1
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (26,1,true,true,true,'note',false,true,true,true,NULL,true); -- 3,1
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (17,2,true,true,true,'note',true,false,true,false,NULL,false); -- 1,2
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (19,2,true,true,true,'note',true,false,true,true,NULL,false); -- 1,2
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (20,2,true,true,true,'note',true,false,false,true,NULL,false); -- 1,2
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (3,2,true,true,true,'note',true,false,true,true,NULL,false); -- 5,2
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (4,2,true,true,true,'note',true,false,true,true,NULL,false); -- 5,2
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (1,2,true,true,true,'note',true,false,true,true,NULL,true); -- 5,2
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (28,3,true,true,false,'note',true,false,false,NULL,NULL,false); -- 2,3
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (43,3,true,true,false,'note',true,false,false,NULL,NULL,false); -- 2,3
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (35,3,true,false,false,'note',NULL,NULL,NULL,NULL,NULL,NULL); -- 2,3
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (18,4,true,true,true,'note',false,true,true,false,NULL,true); -- 1,4 
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (19,4,true,true,true,'note',false,true,true,false,NULL,true); -- 1,4
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (20,4,true,true,true,'note',false,false,true,false,NULL,true); -- 1,4
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (36,4,true,true,true,'note',false,true,true,false,NULL,true); -- 2,4
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (44,4,true,true,true,'note',false,true,true,false,NULL,true); -- 2,4
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (31,4,true,true,true,'note',false,true,false,false,NULL,true); -- 2,4
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (24,4,true,true,true,'note',false,true,true,false,NULL,true); -- 3,4
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (25,4,true,true,true,'note',false,true,true,false,NULL,true); -- 3,4
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (26,4,true,true,true,'note',false,false,true,false,NULL,true); -- 3,4
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (15,4,true,true,true,'note',false,true,true,false,NULL,true); -- 4,4
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (13,4,true,true,true,'note',false,true,true,false,NULL,true); -- 4,4
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (11,4,true,true,true,'note',false,true,true,false,NULL,true); -- 4,4
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (5,4,true,true,true,'note',false,true,false,false,NULL,true); -- 5,4
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (1,4,true,true,true,'note',false,true,true,false,NULL,true); -- 5,4
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (2,4,true,true,true,'note',false,false,true,false,NULL,true); -- 5,4
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (27,4,true,true,true,'note',false,true,true,false,NULL,true); -- 6,4
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (6,4,true,true,true,'note',false,true,true,false,NULL,true); -- 7,4
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (9,4,true,true,true,'note',false,true,true,false,NULL,true); -- 7,4
+INSERT INTO selected_pictures(id_pic,id_game,step_one_done,step_two_done,step_three_done,note,child_tag,do_like,is_happy,is_autonomous,priority,would_like) VALUES (8,4,true,true,true,'note',false,false,false,false,NULL,true); -- 7,4
