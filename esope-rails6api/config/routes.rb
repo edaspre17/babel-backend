@@ -11,8 +11,12 @@ Rails.application.routes.draw do
         collection do
           post 'choosenCategories(/:id)', to: 'selected_categories#choosenCategories'
         end
-    end
-      resources :categories
+      end
+      resources :categories do
+        collection do 
+          post 'allPictures(/:id)', to: 'categories#allPictures'
+        end
+      end
       resources :game_sessions do
         collection do
           post 'latest(/:id)', to: 'game_sessions#latest'

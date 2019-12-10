@@ -13,6 +13,13 @@ class Api::V1::CategoriesController < ApplicationController
     render json: @category
   end
 
+  # POST /categories/allPicture/:id_cat
+  def allPictures
+    @pictures = Picture.find_by_sql(["SELECT p.* FROM categories c, pictures p WHERE p.category_id = c.id AND c.id = ? ", params[:id]])
+
+    render json: @pictures
+  end
+
   # POST /categories
   def create
     @category = Category.new(category_params)
