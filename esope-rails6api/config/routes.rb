@@ -3,13 +3,13 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :selected_pictures do
           collection do
-            post 'ChoosenPictures(/:id)', to: 'selected_pictures#ChoosenPictures'
+            post 'choosenPictures(/:id)', to: 'selected_pictures#choosenPictures'
           end
       end
       resources :pictures
       resources :selected_categories do
         collection do
-          post 'ChoosenCategories(/:id)', to: 'selected_categories#ChoosenCategories'
+          post 'choosenCategories(/:id)', to: 'selected_categories#choosenCategories'
         end
     end
       resources :categories

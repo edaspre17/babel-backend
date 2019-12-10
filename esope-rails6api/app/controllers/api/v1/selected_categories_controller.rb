@@ -13,6 +13,13 @@ class Api::V1::SelectedCategoriesController < ApplicationController
     render json: @selected_category
   end
 
+  #POST /selected_categories/ChoosenCategories/:id_game_session
+  def choosenCategories
+    @pictures = SelectedPicture.find_by_sql(["SELECT c.* FROM categories c, selected_categories sc 
+            WHERE c.id = sc.category_id AND sc.game_session_id = ?", params[:id]])
+    render json: @pictures
+  end
+
   # POST /selected_categories
   def create
     @selected_category = SelectedCategory.new(selected_category_params)

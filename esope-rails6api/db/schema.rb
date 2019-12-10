@@ -132,7 +132,7 @@ ActiveRecord::Schema.define(version: 2019_12_07_104955) do
     t.string "note"
     t.boolean "archived"
     t.string "phone"
-    t.string "email", null: false
+    t.string "email"
     t.string "job"
     t.datetime "inserts_date"
     t.integer "user_level"
