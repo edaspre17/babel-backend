@@ -6,14 +6,14 @@ class GameSession < ApplicationRecord
 
   def default_values
     self.startdate ||= DateTime.now
-    self.
-    self.
-    self. 
-    self.
-    self.
-    self.
-    self.
-    self.
-    self.
+    #self.
+    #self.
+    #self. 
+    #self.
+    #self.
+    #self.
+    #self.
+    #self.
+    #self.
 end
 end

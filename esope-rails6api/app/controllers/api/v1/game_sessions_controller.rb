@@ -46,7 +46,7 @@ class Api::V1::GameSessionsController < ApplicationController
   # Programmer's attempt
   # ####################
 
-  # POST /game_sessions/latest/1
+  # POST /game_sessions/latest/child_id
   def latest
     @latest = GameSession.find_by_sql(["SELECT g.id as game_id, g.start_date, 
       g.guardian_comment, g.prof_comment,g.step_one, g.step_two, g.step_three, 
@@ -84,6 +84,12 @@ class Api::V1::GameSessionsController < ApplicationController
       WHERE g.child_id = ? AND  g.start_date IS NOT NULL
       ORDER BY g.start_date ASC",params[:id]]) # Returns all the games of the kid, ordered by date
     render json: @game_sessions
+  end
+
+  #POST /game_sessions/getgameforchild/:child_id
+  def getgameforchild
+    @gs = GameSession.find_by_sql(["SELECT gs.* FROM game_sessions gs WHERE gs.child_id = ? AND gs.start_date= (SELECT MAX(j.start_date) FROM game_sessions j WHERE gs.child_id = j.child_id)", params[:id]])
+    render json: @gs
   end
   # ##############
   # Auto-generated
