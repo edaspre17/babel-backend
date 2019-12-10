@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       resources :game_sessions do
         collection do
           post 'latest(/:id)', to: 'game_sessions#latest'
+          post 'getgamesbydate(/:id)', to: 'game_sessions#getgamesbydate'
         end
       end
       resources :mandates
