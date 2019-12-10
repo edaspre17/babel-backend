@@ -15,9 +15,9 @@ class Api::V1::SelectedCategoriesController < ApplicationController
 
   #POST /selected_categories/ChoosenCategories/:id_game_session
   def choosenCategories
-    @pictures = SelectedPicture.find_by_sql(["SELECT c.* FROM categories c, selected_categories sc 
-            WHERE c.id = sc.category_id AND sc.game_session_id = ?", params[:id]])
-    render json: @pictures
+    @categories = SelectedCategory.find_by_sql(["SELECT c.* FROM categories c, selected_categories sc 
+            WHERE c.id = sc.category_id AND sc.game_session_id = ? ORDER BY sorting", params[:id]])
+    render json: @categories
   end
 
   # POST /selected_categories

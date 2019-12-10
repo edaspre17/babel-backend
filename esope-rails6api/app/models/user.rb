@@ -8,6 +8,8 @@ class User < ApplicationRecord
     def default_values
         self.inserts_date ||= DateTime.now
         self.inserts_date ||= 0
+        self.user_level ||= 0
+        self.archived ||= false 
         self.version ||= 0
         self.imagepath ||= 'default.png'
     end
