@@ -20,9 +20,9 @@ class Api::V1::GameSessionsController < ApplicationController
   # POST /game_sessions
   def create
     @game_session = GameSession.new(game_session_params)
-
+     
     if @game_session.save
-      render json: @game_session, status: :created, location: @game_session
+        render json: @game_session, status: :created, location: nil
     else
       render json: @game_session.errors, status: :unprocessable_entity
     end
@@ -52,7 +52,8 @@ class Api::V1::GameSessionsController < ApplicationController
       INNER JOIN mandates m ON m.id = g.mandate_id
       INNER JOIN selected_categories sc ON sc.game_session_id = g.id 
       INNER JOIN selected_pictures sp ON sp.game_session_id = g.id
-      WHERE g.child_id = ? AND  g.start_date >= (SELECT MAX(j.start_date) FROM game_sessions j WHERE j.child_id = ?)", params[:id],params[:id]]) # Returns as many tuples as there's pictures in the game session.
+      WHERE g.child_id = ? AND  g.start_date >= (SELECT MAX(j.start_date) 
+      FROM game_sessions j WHERE j.child_id = ?)", params[:id],params[:id]]) # Returns as many tuples as there's pictures in the game session.
       render json: @latest
   end
 
@@ -69,6 +70,6 @@ class Api::V1::GameSessionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def game_session_params
-      params.require(:game_session).permit(:start_date, :guardian_comment, :prof_comment, :step_one, :step_two, :step_three, :finished_state, :version, :id_game, :child_id, :user_id, :mandate_id)
+      params.require(:game_session).permit(:start_date, :guardian_comment, :prof_comment, :step_one, :step_two, :step_three, :finished_state, :version, :child_id, :user_id, :mandate_id, :instigator, :demand, :insert_date)
     end
 end
