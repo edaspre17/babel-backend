@@ -14,14 +14,13 @@ class Api::V1::MandatesController < ApplicationController
   end
 
   # POST /mandates/id_game
-  def ,,
-  end
+
   # POST /mandates
   def create
     @mandate = Mandate.new(mandate_params)
 
     if @mandate.save
-      render json: @mandate, status: :created, location: @mandate
+      render json: @mandate, status: :created, location: nil
     else
       render json: @mandate.errors, status: :unprocessable_entity
     end

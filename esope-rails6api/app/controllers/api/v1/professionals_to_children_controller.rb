@@ -13,7 +13,7 @@ class Api::V1::ProfessionalsToChildrenController < ApplicationController
     render json: @professionals_to_child
   end
 
-  # GET /professionals_to_children/listChildren/1
+  # POST /professionals_to_children/listChildren/1
   #renvoie la liste des enfants d'un professionnel
   def listChildren 
     @pc = ChildrenContact.find_by_sql(["Select * FROM professionals_to_children pc, children c 
@@ -21,7 +21,7 @@ class Api::V1::ProfessionalsToChildrenController < ApplicationController
     render json: @pc
   end
   
-  # GET /professionals_to_children/lastPro/1
+  # POST /professionals_to_children/lastPro/1
   #renvoie la liste des enfants d'un professionnel
   def lastPro 
     @pc = ChildrenContact.find_by_sql(["Select * FROM users u , professionals_to_children pc
@@ -29,7 +29,7 @@ class Api::V1::ProfessionalsToChildrenController < ApplicationController
     render json: @pc
   end
 
-  # GET /professionals_to_children/listPro/1
+  # POST /professionals_to_children/listPro/1
   #renvoie la liste des professionnel qu'a eu un enfant
   def listPro
     @pc = ChildrenContact.find_by_sql(["Select * FROM users u , professionals_to_children pc
@@ -43,7 +43,7 @@ class Api::V1::ProfessionalsToChildrenController < ApplicationController
     @professionals_to_child = ProfessionalsToChild.new(professionals_to_child_params)
 
     if @professionals_to_child.save
-      render json: @professionals_to_child, status: :created, location: @professionals_to_child
+      render json: @professionals_to_child, status: :created, location: nil
     else
       render json: @professionals_to_child.errors, status: :unprocessable_entity
     end

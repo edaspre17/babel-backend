@@ -18,7 +18,7 @@ class Api::V1::SelectedPicturesController < ApplicationController
     @selected_picture = SelectedPicture.new(selected_picture_params)
 
     if @selected_picture.save
-      render json: @selected_picture, status: :created, location: @selected_picture
+      render json: @selected_picture, status: :created, location: nil
     else
       render json: @selected_picture.errors, status: :unprocessable_entity
     end
