@@ -74,12 +74,12 @@ INSERT INTO users(name, surname, user_level, phone,email,pwd) VALUES ('Guardian6
 INSERT INTO users(name, surname, user_level, phone,email,pwd) VALUES ('Guardian7','Contact7',0,'04 86 07 07 07','c7nt7ct@gmail.be','mdp');--9
 INSERT INTO users(name, surname, user_level, phone,email,pwd) VALUES ('Guardian8','Contact8',0,'04 86 08 08 08','c8nt8ct@gmail.be','mdp');--10
 -- Users : professionals
-INSERT INTO users(name, surname, user_level, phone,email,pwd,job) VALUES ('WhatDoYouActuallyKnow?','KissTheGirl',2,'04 85 10 10 10','dr1@vinci.be','mdp','Ergothérapeute');--11
-INSERT INTO users(name, surname, user_level, phone,email,pwd,job) VALUES ('NoSoul','PasUneVidéoSVP!',2,'04 85 20 20 20','dr2@vinci.be','mdp','Psychologue');--12
-INSERT INTO users(name, surname, user_level, phone,email,pwd,job) VALUES ('NoBalls','Flash',2,'04 85 30 30 30','dr3@vinci.be','mdp','Educateur');--13
-INSERT INTO users(name, surname, user_level, phone,email,pwd,job) VALUES ('AreYouSarious?','PleaseNotTheRoaster',2,'04 85 40 40 40','dr4@vinci.be','mdp','Kinésithérapeute');--14
-INSERT INTO users(name, surname, user_level, phone,email,pwd,job) VALUES ('Daddy','OSCheatSheet',2,'04 85 50 50 50','dr5@vinci.be','mdp','Enseignant');--15
-INSERT INTO users(name, surname, user_level, phone,email,pwd,job) VALUES ('Mommy','WhyThePlacenta?',2,'04 85 60 60 60','dr6@vinci.be','mdp','Autre');--16
+INSERT INTO users(name, surname, user_level, phone,email,pwd,job) VALUES ('WhatDoYouActuallyKnow?','KissTheGirl',1,'04 85 10 10 10','dr1@vinci.be','mdp','Ergothérapeute');--11
+INSERT INTO users(name, surname, user_level, phone,email,pwd,job) VALUES ('NoSoul','PasUneVidéoSVP!',1,'04 85 20 20 20','dr2@vinci.be','mdp','Psychologue');--12
+INSERT INTO users(name, surname, user_level, phone,email,pwd,job) VALUES ('NoBalls','Flash',1,'04 85 30 30 30','dr3@vinci.be','mdp','Educateur');--13
+INSERT INTO users(name, surname, user_level, phone,email,pwd,job) VALUES ('AreYouSarious?','PleaseNotTheRoaster',1,'04 85 40 40 40','dr4@vinci.be','mdp','Kinésithérapeute');--14
+INSERT INTO users(name, surname, user_level, phone,email,pwd,job) VALUES ('Daddy','OSCheatSheet',1,'04 85 50 50 50','dr5@vinci.be','mdp','Enseignant');--15
+INSERT INTO users(name, surname, user_level, phone,email,pwd,job) VALUES ('Mommy','WhyThePlacenta?',1,'04 85 60 60 60','dr6@vinci.be','mdp','Autre');--16
 
 -- Child_contacts
 INSERT INTO children_contacts(user_id,child_id,relation) VALUES (4,1,'Mère');
