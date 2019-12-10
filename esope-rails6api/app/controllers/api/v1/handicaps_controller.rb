@@ -18,7 +18,7 @@ class Api::V1::HandicapsController < ApplicationController
     @handicap = Handicap.new(handicap_params)
 
     if @handicap.save
-      render json: @handicap, status: :created, location: @handicap
+      render json: @handicap, status: :created, location: nil
     else
       render json: @handicap.errors, status: :unprocessable_entity
     end

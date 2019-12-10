@@ -18,7 +18,7 @@ class Api::V1::SelectedCategoriesController < ApplicationController
     @selected_category = SelectedCategory.new(selected_category_params)
 
     if @selected_category.save
-      render json: @selected_category, status: :created, location: @selected_category
+      render json: @selected_category, status: :created, location: nil
     else
       render json: @selected_category.errors, status: :unprocessable_entity
     end

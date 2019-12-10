@@ -24,7 +24,7 @@ class Api::V1::HandicapsToChildrenController < ApplicationController
     @handicaps_to_child = HandicapsToChild.new(handicaps_to_child_params)
 
     if @handicaps_to_child.save
-      render json: @handicaps_to_child, status: :created, location: @handicaps_to_child
+      render json: @handicaps_to_child, status: :created, location: nil
     else
       render json: @handicaps_to_child.errors, status: :unprocessable_entity
     end

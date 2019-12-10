@@ -33,7 +33,7 @@ class Api::V1::ChildrenContactsController < ApplicationController
     @children_contact = ChildrenContact.new(children_contact_params)
 
     if @children_contact.save
-      render json: @children_contact, status: :created, location: @children_contact
+      render json: @children_contact, status: :created, location: nil
     else
       render json: @children_contact.errors, status: :unprocessable_entity
     end
