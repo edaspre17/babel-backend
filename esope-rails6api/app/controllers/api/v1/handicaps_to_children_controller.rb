@@ -13,7 +13,7 @@ class Api::V1::HandicapsToChildrenController < ApplicationController
     render json: @handicaps_to_child
   end
 
-  # GET /handicaps_to_children/myHandicaps/1
+  # POST /handicaps_to_children/myHandicaps/1
   def myHandicaps
     @myHand = HandicapsToChild.find_by_sql(["SELECT h.description FROM handicaps_to_Children hc, handicaps h WHERE child_id = ? AND h.id = hc.child_id", params[:id]])
     render json: @myHand

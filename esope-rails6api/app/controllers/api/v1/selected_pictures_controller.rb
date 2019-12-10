@@ -13,6 +13,13 @@ class Api::V1::SelectedPicturesController < ApplicationController
     render json: @selected_picture
   end
 
+  #POST /selected_pictures/ChoosenPictures/:id_game_session
+  def choosenPictures
+    @pictures = SelectedPicture.find_by_sql(["SELECT p.* FROM pictures p, selected_pictures sp 
+            WHERE p.id = sp.picture_id AND sp.game_session_id = ?", params[:id]])
+    render json: @pictures
+  end
+
   # POST /selected_pictures
   def create
     @selected_picture = SelectedPicture.new(selected_picture_params)
