@@ -48,6 +48,6 @@ class Api::V1::MandatesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def mandate_params
-      params.require(:mandate).permit(:investigator, :demand, :id_mandate, :child_id, :insert_date)
+      params.require(:mandate).permit(:instigator, :demand, :id_mandate, :child_id, :insert_date)
     end
 end
