@@ -3,9 +3,9 @@
 one:
   name: MyString
   description: MyString
-  id_cat: 1
+  #id_cat: 1
 
 two:
   name: MyString
   description: MyString
-  id_cat: 1
+  #id_cat: 1
