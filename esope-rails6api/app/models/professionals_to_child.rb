@@ -5,4 +5,5 @@ class ProfessionalsToChild < ApplicationRecord
 
   def default_values
     self.start_care_date ||= DateTime.now
+  end
 end
