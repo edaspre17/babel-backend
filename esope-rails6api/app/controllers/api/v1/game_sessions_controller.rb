@@ -93,6 +93,12 @@ class Api::V1::GameSessionsController < ApplicationController
     render json: @gs
   end
 
+  #POST /game_sessions/allDate/:child_id
+  def allDate
+    @gs = GameSession.find_by_sql(["SELECT id, start_date FROM game_sessions WHERE child_id = ?", params[:id]])
+    render json: @gs
+  end
+
   # ##############
   # Auto-generated
   # ##############
