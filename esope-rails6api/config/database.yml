@@ -1,8 +1,8 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  #url: postgres://kujbvswq:RIiAoFolkQ6Ns0a2eEZ8BeShyEtCorNW@manny.db.elephantsql.com:5432/kujbvswq
-  url: postgres://postgres:password@localhost:5432/esope_dev
+  url: postgres://kujbvswq:RIiAoFolkQ6Ns0a2eEZ8BeShyEtCorNW@manny.db.elephantsql.com:5432/kujbvswq
+  #url: postgres://postgres:password@localhost:5432/esope_dev
   #url: postgres://postgres:6314@localhost:5432/esope
 
 development:
