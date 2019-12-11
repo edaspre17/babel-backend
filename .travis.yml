@@ -1,9 +1,8 @@
 before_script: 
-  - cd esope-rails6api
   - gem install bundler
-  - bundle update rake
+  - gem install rails
+  - bundle install
   - gem update --system
-  - cat config/database.yml
   - rails db:migrate RAILS_ENV=test
 language: ruby
 rvm:

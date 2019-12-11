@@ -12,7 +12,8 @@ class HandicapsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create handicap" do
     assert_difference('Handicap.count') do
-      post handicaps_url, params: { handicap: { description: @handicap.description, id_handicap: @handicap.id_handicap } }, as: :json
+      post handicaps_url, params: { handicap: { description: @handicap.description } }, as: :json
+      #post handicaps_url, params: { handicap: { description: @handicap.description, id_handicap: @handicap.id_handicap } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +25,8 @@ class HandicapsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update handicap" do
-    patch handicap_url(@handicap), params: { handicap: { description: @handicap.description, id_handicap: @handicap.id_handicap } }, as: :json
+    patch handicap_url(@handicap), params: { handicap: { description: @handicap.description } }, as: :json
+    #patch handicap_url(@handicap), params: { handicap: { description: @handicap.description, id_handicap: @handicap.id_handicap } }, as: :json
     assert_response 200
   end
 
