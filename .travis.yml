@@ -1,5 +1,6 @@
 before_script: 
   - gem install bundler
+  - gem install rails
   - bundle install
   - gem update --system
   - rails db:migrate RAILS_ENV=test
