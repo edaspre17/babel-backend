@@ -13,12 +13,14 @@ class Api::V1::MandatesController < ApplicationController
     render json: @mandate
   end
 
+  # POST /mandates/id_game
+
   # POST /mandates
   def create
     @mandate = Mandate.new(mandate_params)
 
     if @mandate.save
-      render json: @mandate, status: :created, location: @mandate
+      render json: @mandate, status: :created, location: nil
     else
       render json: @mandate.errors, status: :unprocessable_entity
     end
@@ -46,6 +48,6 @@ class Api::V1::MandatesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def mandate_params
-      params.require(:mandate).permit(:instigator, :demand, :id_mandate, :id_child, :insert_date)
+      params.require(:mandate).permit(:instigator, :demand, :id_mandate, :child_id, :insert_date)
     end
 end

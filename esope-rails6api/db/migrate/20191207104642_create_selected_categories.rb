@@ -3,10 +3,8 @@ class CreateSelectedCategories < ActiveRecord::Migration[6.0]
     create_table :selected_categories do |t|
       t.integer :sorting
       t.boolean :status
-      t.integer :id_category
-      t.integer :id_game
-
-      t.timestamps
+      t.belongs_to :category, null: false, foreign_key: true
+      t.belongs_to :game_session, null: false, foreign_key: true
     end
   end
 end

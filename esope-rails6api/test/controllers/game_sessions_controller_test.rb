@@ -12,7 +12,7 @@ class GameSessionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create game_session" do
     assert_difference('GameSession.count') do
-      post game_sessions_url, params: { game_session: { finished_date: @game_session.finished_date, guardian_comment: @game_session.guardian_comment, id_child: @game_session.id_child, id_game: @game_session.id_game, id_user_prof: @game_session.id_user_prof, mandate: @game_session.mandate, prof_comment: @game_session.prof_comment, startdate: @game_session.startdate, step_one: @game_session.step_one, step_three: @game_session.step_three, step_two: @game_session.step_two, version: @game_session.version } }, as: :json
+      post game_sessions_url, params: { game_session: { child_id: @game_session.child_id, finished_state: @game_session.finished_state, guardian_comment: @game_session.guardian_comment, id_game: @game_session.id_game, mandate_id: @game_session.mandate_id, prof_comment: @game_session.prof_comment, start_date: @game_session.start_date, step_one: @game_session.step_one, step_three: @game_session.step_three, step_two: @game_session.step_two, user_id: @game_session.user_id, version: @game_session.version } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class GameSessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update game_session" do
-    patch game_session_url(@game_session), params: { game_session: { finished_date: @game_session.finished_date, guardian_comment: @game_session.guardian_comment, id_child: @game_session.id_child, id_game: @game_session.id_game, id_user_prof: @game_session.id_user_prof, mandate: @game_session.mandate, prof_comment: @game_session.prof_comment, startdate: @game_session.startdate, step_one: @game_session.step_one, step_three: @game_session.step_three, step_two: @game_session.step_two, version: @game_session.version } }, as: :json
+    patch game_session_url(@game_session), params: { game_session: { child_id: @game_session.child_id, finished_state: @game_session.finished_state, guardian_comment: @game_session.guardian_comment, id_game: @game_session.id_game, mandate_id: @game_session.mandate_id, prof_comment: @game_session.prof_comment, start_date: @game_session.start_date, step_one: @game_session.step_one, step_three: @game_session.step_three, step_two: @game_session.step_two, user_id: @game_session.user_id, version: @game_session.version } }, as: :json
     assert_response 200
   end
 

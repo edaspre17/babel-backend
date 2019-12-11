@@ -1,2 +1,0 @@
-class HandicapToChild < ApplicationRecord
-end

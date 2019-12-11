@@ -18,7 +18,7 @@ class Api::V1::PicturesController < ApplicationController
     @picture = Picture.new(picture_params)
 
     if @picture.save
-      render json: @picture, status: :created, location: @picture
+      render json: @picture, status: :created, location: nil
     else
       render json: @picture.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class Api::V1::PicturesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def picture_params
-      params.require(:picture).permit(:description, :path, :id_pic, :id_category)
+      params.require(:picture).permit(:description, :path, :picture, :category_id)
     end
 end

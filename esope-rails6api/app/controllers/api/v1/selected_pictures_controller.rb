@@ -13,12 +13,19 @@ class Api::V1::SelectedPicturesController < ApplicationController
     render json: @selected_picture
   end
 
+  #POST /selected_pictures/ChoosenPictures/:id_game_session
+  def choosenPictures
+    @pictures = SelectedPicture.find_by_sql(["SELECT p.* FROM pictures p, selected_pictures sp 
+            WHERE p.id = sp.picture_id AND sp.game_session_id = ?", params[:id]])
+    render json: @pictures
+  end
+
   # POST /selected_pictures
   def create
     @selected_picture = SelectedPicture.new(selected_picture_params)
 
     if @selected_picture.save
-      render json: @selected_picture, status: :created, location: @selected_picture
+      render json: @selected_picture, status: :created, location: nil
     else
       render json: @selected_picture.errors, status: :unprocessable_entity
     end
@@ -46,6 +53,6 @@ class Api::V1::SelectedPicturesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def selected_picture_params
-      params.require(:selected_picture).permit(:note, :child_tag, :do_like, :is_happy, :is_autonomous, :priority, :would_like, :step_one_done, :step_two_done, :step_three_done, :id_pic, :id_game, :version)
+      params.require(:selected_picture).permit(:note, :child_tag, :do_like, :is_happy, :is_autonomous, :priority, :would_like, :step_one_done, :step_two_done, :step_three_done, :picture_id, :game_session_id, :version)
     end
 end

@@ -2,10 +2,10 @@
 
 one:
   comment: MyString
-  id_child: 1
-  id_handicap: 1
+  child: one
+  handicap: one
 
 two:
   comment: MyString
-  id_child: 1
-  id_handicap: 1
+  child: two
+  handicap: two

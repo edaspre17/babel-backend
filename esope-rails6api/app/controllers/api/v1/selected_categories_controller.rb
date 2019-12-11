@@ -13,12 +13,19 @@ class Api::V1::SelectedCategoriesController < ApplicationController
     render json: @selected_category
   end
 
+  #POST /selected_categories/ChoosenCategories/:id_game_session
+  def choosenCategories
+    @categories = SelectedCategory.find_by_sql(["SELECT c.* FROM categories c, selected_categories sc 
+            WHERE c.id = sc.category_id AND sc.game_session_id = ? ORDER BY sorting", params[:id]])
+    render json: @categories
+  end
+
   # POST /selected_categories
   def create
     @selected_category = SelectedCategory.new(selected_category_params)
 
     if @selected_category.save
-      render json: @selected_category, status: :created, location: @selected_category
+      render json: @selected_category, status: :created, location: nil
     else
       render json: @selected_category.errors, status: :unprocessable_entity
     end
@@ -46,6 +53,6 @@ class Api::V1::SelectedCategoriesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def selected_category_params
-      params.require(:selected_category).permit(:sorting, :status, :id_category, :id_game)
+      params.require(:selected_category).permit(:sorting, :status, :category_id, :game_session_id)
     end
 end

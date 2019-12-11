@@ -13,9 +13,6 @@ class CreateChildren < ActiveRecord::Migration[6.0]
       t.string :note
       t.boolean :archived
       t.integer :version
-      t.integer :id_child
-
-      t.timestamps
     end
   end
 end

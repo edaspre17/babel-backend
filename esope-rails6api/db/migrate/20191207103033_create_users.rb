@@ -13,9 +13,6 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.timestamp :inserts_date
       t.integer :user_level
       t.integer :version
-      t.integer :id_user
-
-      t.timestamps
     end
   end
 end

@@ -11,8 +11,8 @@ one:
   step_one_done: false
   step_two_done: false
   step_three_done: false
-  id_pic: 1
-  id_game: 1
+  picture: one
+  game_session: one
   version: 1
 
 two:
@@ -26,6 +26,6 @@ two:
   step_one_done: false
   step_two_done: false
   step_three_done: false
-  id_pic: 1
-  id_game: 1
+  picture: two
+  game_session: two
   version: 1
