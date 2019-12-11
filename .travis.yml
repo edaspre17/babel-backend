@@ -1,5 +1,7 @@
 before_script: 
   - cd esope-rails6api
+  - gem install bundler
+  - gem update --system
   - bundler -v
 language: ruby
 rvm:
