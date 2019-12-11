@@ -1,6 +1,5 @@
 before_script: 
   - cd esope-rails6api
-  - bundle update --bundler
   - bundler -v
 language: ruby
 rvm:
