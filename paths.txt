@@ -1,0 +1,24 @@
+Path
+	user		/login		/child			[POST] 		id_child
+							/user			[POST] 		password, id_user
+				/register	/prof			[POST] 		prof {}
+							/child			[POST] 		child {}
+							/contact		[POST] 		id_child, relation
+				/child 		/id 			[POST]		id_child
+				/child 		/list 			[POST]		id_prof
+				/archive					[POST]		id_child
+				/handicap	/list			[GET]
+				/category	/list			[GET]
+				/image		/list			[GET]
+	game		/cat_sort					[PUT]		id_cat, id_game, sorting, status
+				/step_sort					[PUT]		step_order, step_identifier, id_game
+		 		/image 						[PUT]   	image {}
+				/image		/list			[PUT]		id_game, ids_image
+		 		/load		/latest			[POST]		id_child
+		 		/create						[POST]		id_child, id_professional, mandate {}
+	category	/delete						[DELETE]	id_cat
+				/add						[POST]		name, description
+	image 		/delete 					[DELETE]	id_pic
+				/add						[POST]		path
+
+		 	

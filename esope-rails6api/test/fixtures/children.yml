@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  surname: MyString
+  birthday: 2019-12-07 11:32:33
+  lang: MyString
+  hand: MyString
+  school: MyString
+  school_type: MyString
+  school_lvl: MyString
+  imagepath: MyString
+  note: MyString
+  archived: false
+  version: 1
+  id_child: 1
+
+two:
+  name: MyString
+  surname: MyString
+  birthday: 2019-12-07 11:32:33
+  lang: MyString
+  hand: MyString
+  school: MyString
+  school_type: MyString
+  school_lvl: MyString
+  imagepath: MyString
+  note: MyString
+  archived: false
+  version: 1
+  id_child: 1
