@@ -9,7 +9,7 @@ one:
   step_three: 1
   finished_state: 1
   version: 1
-  id_game: 1
+  #id_game: 1
   child: one
   user: one
   mandate: one
@@ -23,7 +23,7 @@ two:
   step_three: 1
   finished_state: 1
   version: 1
-  id_game: 1
+  #id_game: 1
   child: two
   user: two
   mandate: two
