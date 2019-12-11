@@ -12,7 +12,7 @@ class GameSession < ApplicationRecord
     self.finished_state ||= 0
     self.step_one ||= 0 
     self.step_two ||= 0
-    self.step_three ||= 3
+    self.step_three ||= 0
     self.guardian_comment ||= "Aucun commentaire"
     self.prof_comment ||= "Aucun commentaire"
   end
