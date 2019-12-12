@@ -5,10 +5,10 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
     @category = categories(:one)
   end
 
-  test "should get index" do
-    get categories_url, as: :json
-    assert_response :success
-  end
+ test "should get index" do
+   get categories_url, as: :json
+   assert_response :success
+ end
 
   test "should create category" do
     assert_difference('Category.count') do

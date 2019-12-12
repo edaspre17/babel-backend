@@ -1,15 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id_care: 1
+  #id_care: 1
   user: one
   child: one
   start_care_date: 2019-12-07 11:36:54
-  en_care_date: 2019-12-07 11:36:54
+  end_care_date: 2019-12-07 11:36:54
 
 two:
-  id_care: 1
+  #id_care: 1
   user: two
   child: two
   start_care_date: 2019-12-07 11:36:54
-  en_care_date: 2019-12-07 11:36:54
+  end_care_date: 2019-12-07 11:36:54

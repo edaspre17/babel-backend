@@ -5,14 +5,15 @@ class PicturesControllerTest < ActionDispatch::IntegrationTest
     @picture = pictures(:one)
   end
 
-  test "should get index" do
-    get pictures_url, as: :json
-    assert_response :success
-  end
+# test "should get index" do
+#   get pictures_url, as: :json
+#   assert_response :success
+# end
 
   test "should create picture" do
     assert_difference('Picture.count') do
-      post pictures_url, params: { picture: { category_id: @picture.category_id, description: @picture.description, path: @picture.path, picture: @picture.picture } }, as: :json
+      #post pictures_url, params: { picture: { category_id: @picture.category_id, description: @picture.description, path: @picture.path, picture: @picture.picture } }, as: :json
+      post pictures_url, params: { picture: { category_id: @picture.category_id, description: @picture.description, path: @picture.path} }, as: :json
     end
 
     assert_response 201
@@ -24,7 +25,8 @@ class PicturesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update picture" do
-    patch picture_url(@picture), params: { picture: { category_id: @picture.category_id, description: @picture.description, path: @picture.path, picture: @picture.picture } }, as: :json
+    #patch picture_url(@picture), params: { picture: { category_id: @picture.category_id, description: @picture.description, path: @picture.path, picture: @picture.picture } }, as: :json
+    patch picture_url(@picture), params: { picture: { category_id: @picture.category_id, description: @picture.description, path: @picture.path} }, as: :json
     assert_response 200
   end
 

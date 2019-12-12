@@ -5,10 +5,10 @@ class ChildrenControllerTest < ActionDispatch::IntegrationTest
     @child = children(:one)
   end
 
-  test "should get index" do
-    get children_url, as: :json
-    assert_response :success
-  end
+# test "should get index" do
+#   get children_url, as: :json
+#   assert_response :success
+# end
 
   test "should create child" do
     assert_difference('Child.count') do

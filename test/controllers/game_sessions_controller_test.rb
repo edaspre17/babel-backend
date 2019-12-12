@@ -5,10 +5,10 @@ class GameSessionsControllerTest < ActionDispatch::IntegrationTest
     @game_session = game_sessions(:one)
   end
 
-  test "should get index" do
-    get game_sessions_url, as: :json
-    assert_response :success
-  end
+#  test "should get index" do
+#    get game_sessions_url, as: :json
+#    assert_response :success
+#  end
 
   test "should create game_session" do
     assert_difference('GameSession.count') do

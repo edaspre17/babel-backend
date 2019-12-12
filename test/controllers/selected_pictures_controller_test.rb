@@ -5,10 +5,10 @@ class SelectedPicturesControllerTest < ActionDispatch::IntegrationTest
     @selected_picture = selected_pictures(:one)
   end
 
-  test "should get index" do
-    get selected_pictures_url, as: :json
-    assert_response :success
-  end
+# test "should get index" do
+#   get selected_pictures_url, as: :json
+#   assert_response :success
+# end
 
   test "should create selected_picture" do
     assert_difference('SelectedPicture.count') do

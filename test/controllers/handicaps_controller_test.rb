@@ -5,10 +5,10 @@ class HandicapsControllerTest < ActionDispatch::IntegrationTest
     @handicap = handicaps(:one)
   end
 
-  test "should get index" do
-    get handicaps_url, as: :json
-    assert_response :success
-  end
+# test "should get index" do
+#   get handicaps_url, as: :json
+#   assert_response :success
+# end
 
   test "should create handicap" do
     assert_difference('Handicap.count') do
