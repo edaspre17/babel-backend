@@ -7,7 +7,7 @@ class GameSession < ApplicationRecord
 
 
   def default_values
-    self.startdate ||= DateTime.now
+    self.start_date ||= DateTime.now
     self.version ||= 0
     self.finished_state ||= 0
     self.step_one ||= 0 
