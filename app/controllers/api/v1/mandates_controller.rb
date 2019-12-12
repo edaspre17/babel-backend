@@ -13,8 +13,6 @@ class Api::V1::MandatesController < ApplicationController
     render json: @mandate
   end
 
-  # POST /mandates/id_game
-
   # POST /mandates
   def create
     @mandate = Mandate.new(mandate_params)

@@ -12,7 +12,7 @@ class Api::V1::ChildrenContactsController < ApplicationController
     render json: @children_contact
   end
 
-  # GET /children_contacts/listChildren/1
+  # POST /children_contacts/listChildren/1
   #renvoie la liste des enfants d'un tuteur/parent
   def listChildren 
     @cc = ChildrenContact.find_by_sql(["Select * FROM children_contacts cc, children c 

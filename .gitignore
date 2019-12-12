@@ -6,8 +6,8 @@
 
 
 # Ben&Elod
-#/config/database.yml
-#../travis.yml
+/config/database.yml
+../travis.yml
 # Ignore bundler config.
 /.bundle
 

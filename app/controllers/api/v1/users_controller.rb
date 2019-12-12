@@ -23,11 +23,11 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-    # POST /users/login/
-    def login
-      @user = User.find_by_sql(["SELECT id, name, surname, imagepath, note, phone, email, job, inserts_date, version, user_level FROM users WHERE pwd = ? AND email = ?", user_params['pwd'], user_params['email']])
-      render json: @user
-    end
+  # POST /users/login/
+  def login
+    @user = User.find_by_sql(["SELECT id, name, surname, imagepath, note, phone, email, job, inserts_date, version, user_level FROM users WHERE pwd = ? AND email = ?", user_params['pwd'], user_params['email']])
+    render json: @user
+  end
 
   # PATCH/PUT /users/1
   def update
