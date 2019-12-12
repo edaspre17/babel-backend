@@ -5,10 +5,10 @@ class SelectedCategoriesControllerTest < ActionDispatch::IntegrationTest
     @selected_category = selected_categories(:one)
   end
 
-  test "should get index" do
-    get selected_categories_url, as: :json
-    assert_response :success
-  end
+#  test "should get index" do
+#    get selected_categories_url, as: :json
+#    assert_response :success
+#  end
 
   test "should create selected_category" do
     assert_difference('SelectedCategory.count') do
